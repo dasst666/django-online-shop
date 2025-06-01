@@ -105,12 +105,6 @@ h5 {
     height: 195px;
 }
 
-/* to-do */
-.detail-image {
-    width: 150px;
-    height: 150px;
-}
-
 .price {
     font-size: 20px;
     font-weight: 700;
@@ -280,3 +274,21 @@ h5 {
     background-image: url(../img.categories-gtn.png);
 }
 
+/* to-do */
+.detail-image {
+    width: 150px;
+    height: 150px;
+}
+
+.pagination {
+    display: flex;
+    position: absolute;
+    bottom: 0%;
+    left: 46%;
+    gap: 12px;
+    justify-content: center;
+}
+
+.disabled {
+    opacity: 0.2;
+}
