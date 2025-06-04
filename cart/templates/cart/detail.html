@@ -11,8 +11,8 @@
         </div>
         <div class="cart-cards">
             {% for item in cart %}
-                {% with product=tem.product %}
-                    <div class="cart-cart d-flex">
+                {% with product=item.product %}
+                    <div class="cart-card d-flex">
                         <div class="cart-card-img">
                             <img src="{% if product.image %}{{ product.image.url}}{% else %}{% static 'img/noimage.jpg' %}{% endif %}" alt="">
                         </div>
@@ -25,8 +25,8 @@
                             </div>
                         </div>
                         <form action="{% url "cart:cart_remove" product.id %}" method="post">
-                            <input type="submit" value="Remove" class="remove-btn">
                             {% csrf_token %}
+                            <input type="submit" value="Remove" class="remove-btn">
                         </form>
                         <div class="cart-card-price">
                             {% if product.discount %}

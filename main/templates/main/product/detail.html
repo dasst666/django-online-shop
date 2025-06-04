@@ -22,10 +22,10 @@
             {% else %}
                 <p class="price">{{ product.price }}</p>
             {% endif %}
-            <form action="{% url "cart:cart_add" product.id %}" class="qform" method = "post">
+            <form action="{% url 'cart:cart_add' product.id %}" class="qform" method = "post">
+                {% csrf_token %}
                 <div class="cart-form">
-                    {{ cart_product_from }}
-                    {% csrf_token %}
+                    {{ cart_product_form }}
                 </div>
                 <input type="submit" class="add-to-cart-btn" value="Add to cart">
             </form>

@@ -10,7 +10,7 @@ class Cart:
             cart = self.session[settings.CART_SESSION_ID] = {}
         self.cart = cart
     
-    def add(self, product, quantity=1, ovveride_quantity=False):
+    def add(self, product, quantity=1, override_quantity=False):
         product_id = str(product.id)
         if product_id not in self.cart:
             self.cart[product_id] = {'quantity': 0,
@@ -32,7 +32,7 @@ class Cart:
 
     def __iter__(self):
         product_ids = self.cart.keys()
-        products - Product.objects.filter(id__in=product_ids)
+        products = Product.objects.filter(id__in=product_ids)
         cart = self.cart.copy()
         for product in products:
             cart[str(product.id)]['product'] = product
