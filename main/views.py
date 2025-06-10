@@ -21,7 +21,7 @@ def product_list(request, category_slug=None):
     page = request.GET.get('page', 1)
     category = None
     categories = Category.objects.all()
-    products = Product  .objects.filter(available=True)
+    products = Product.objects.filter(available=True)
     paginator = Paginator(products, 1)
     current_page = paginator.page(int(page))
     if category_slug:
